@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HearstUK/frontend-templates.git"
+    "url": "https://github.com/mwatson86/rock-paper-scissors.git"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -11,9 +11,7 @@
     "grunt-contrib-compass": "^0.8.0",
     "grunt-contrib-jasmine": "^0.8.1",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-requirejs": "~0.4.4",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-template-jasmine-requirejs": "~0.2.0",
     "load-grunt-tasks": "^0.5.0",
     "time-grunt": "^0.3.2",
     "grunt-contrib-concat": "^0.5.0",
@@ -21,6 +19,6 @@
   },
   "author": {
     "name": "Miles Watson",
-    "email": "Miles.watson@hearst.co.uk"
+    "email": "mileswatson86@gmail.com"
   }
 }
