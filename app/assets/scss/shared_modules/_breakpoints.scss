@@ -1,0 +1,19 @@
+/*
+ * Breakpoints
+ */
+
+$mobile-portrait:320px;
+$mobile-mid: 460px;
+$mobile-landscape:600px;
+$tablet-portrait:800px;
+$tablet-mid:900px;
+$tablet-landscape:1024px;
+$desktop-small:1200px;
+$desktop-large:1500px;
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float
+);

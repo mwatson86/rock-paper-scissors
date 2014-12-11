@@ -1,0 +1,143 @@
+/*
+ * Mixins
+ */
+
+/**
+ * generate RGB / RGBA background-color attr
+ *
+ * @param {string} $red (255)
+ * @param {string} $green (255)
+ * @param {string} $blue (255)
+ * @param {string} $alpha (0.7)
+ */
+
+@mixin rgba-bkgd($red: 255, $green: 255, $blue: 255, $alpha: 0.7){
+  background-color: rgb($red, $green, $blue);
+  background-color: rgba($red, $green, $blue, $alpha);
+}
+
+/**
+ * Generate SVG background-image with PNG fallback (.no-svg appended to html el by Modernizr)
+ *
+ * @param {string} $filename
+ * @param {string} $col (false)
+ * @param {bool} $child (false)
+ * @param {string} $repeat (no-repeat)
+ * @param {string} $position (center)
+ * @param {bool} $important (false)
+ * @param {string} $extension (.png)
+ */
+
+@mixin svg-bkgd($filename, $col: false, $child: false, $repeat: no-repeat, $position: center, $important: false, $extension: '.png') {
+
+  @if $important {
+
+    background-image: url($filename + '.svg') !important;
+
+    html.no-svg & {
+      background-image: url($filename + $extension) !important;
+    }
+  }
+  @else {
+
+    background-image: url($filename + '.svg');
+
+    html.no-svg & {
+      background-image: url($filename + $extension);
+    }
+  }
+
+  @if $child == false {
+    background-position:$position;
+    background-repeat:$repeat;
+  }
+
+  @if $col {
+    background-color:$col;
+  }
+}
+
+/**
+ * Generate @font-face rules
+ *
+ * @param {map} $webfonts
+ * @param {string} $weight (normal)
+ * @param {string} $style (normal)
+ *
+ * @requires {map} $webfonts
+ */
+
+@mixin webfonts($webfonts, $weight: normal, $style: normal) {
+
+  @each $webfont in $webfonts {
+
+    @font-face {
+      font-family: $webfont;
+      src: url('/assets/fonts/#{$webfont}.eot');
+      src: url('/assets/fonts/#{$webfont}.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/#{$webfont}.woff') format('woff'),
+      url('/assets/fonts/#{$webfont}.ttf') format('truetype'),
+      url('/assets/fonts/#{$webfont}.svg#ywftsvg') format('svg');
+      font-weight: $weight;
+      font-style: $style;
+    }
+
+    %#{$webfont}-webfont {
+      font-family: $webfont, $base-font-family;
+    }
+  }
+}
+
+/**
+ * Generate CSS triangle
+ *
+ * @param {string} $width (10px)
+ * @param {string} $height (10px)
+ * @param {string} $color (#000000)
+ * @param {string} $direction (down)
+ */
+
+@mixin css-triangle($width:10px, $height:10px, $color:#000000, $direction: down) {
+  width: 0px;
+  height: 0px;
+
+  @if $direction == up {
+    border-top: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $height solid $color;
+  }
+  @else if $direction == right {
+    border-right: 0;
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $height solid $color;
+  }
+  @else if $direction == down {
+    border-bottom: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $height solid $color;
+  }
+  @else {
+    border-left: 0;
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $height solid $color;
+  }
+}
+
+/**
+ * Apply vendor prefix to individual properties
+ *
+ * @param {string} $property
+ * @param {string} $value
+ */
+
+@mixin vendor-prefix($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}

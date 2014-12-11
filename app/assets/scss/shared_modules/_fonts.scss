@@ -1,0 +1,87 @@
+/*
+ * Fonts
+ */
+
+/**
+ * Vertical rhythm base font size
+ *
+ * @type String
+ *
+ * @link http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-base-font-size
+ */
+
+$base-font-size: 16px !default;
+
+/**
+ * Vertical rhythm base line height
+ *
+ * @type String
+ *
+ * @link http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-base-line-height
+ */
+
+$base-line-height: 24px !default;
+
+/**
+ * The default font family
+ *
+ * @type String
+ */
+
+$base-font-family: arial, verdana, sans-serif !default;
+
+/**
+ * Define font-face webfonts
+ *
+ * @type Map
+ */
+
+$webfonts: ();
+
+@include webfonts($webfonts);
+
+/**
+ * Define font styles
+ */
+
+%font {
+  margin: 0;
+  padding: 0;
+
+  /*
+   * Define webfonts using the following naming convention &%webfont-{webfont-key}
+   *
+   * @example
+   * Usage @extend font-family: %font-styles%webfont-{webfont-key}
+   */
+
+  &%webfont-fallback {
+    font-family: $base-font-family;
+
+    /*
+    * Define webfont types using the following naming convention &%type-{unique-id}
+    *
+    * @example
+    * Usage @extend font-family: %font-styles%webfont-{webfont-key}%type-{unique-id}
+    */
+
+    &%type-1 {
+
+      /*
+       * Vertical Rhythm usage within types
+       *
+       * Example @include adjust-font-size-to(font-size, line-height-factor, parent-font-size)
+       *
+       * @param (string) $to-size - font size ($base-font-size)
+       * @param (string) $lines - line height factor (1) calculation: base-line-height * line-height-factor / font-size
+       * @param (string) $from-size - parent-font-size (optional)
+       */
+
+      @include adjust-font-size-to(16px, 2/3);
+    }
+
+    &%type-2 {
+      @include adjust-font-size-to(30px, 3/2);
+    }
+  }
+}

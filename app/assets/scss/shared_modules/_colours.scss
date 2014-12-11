@@ -1,0 +1,23 @@
+/*
+ * Colours
+ */
+
+/*
+ * Naming convention
+ * ${name}-{colour}: hex value
+ * example: $name-colour:#FFF;
+ *
+ * If more than one of the same colour
+ * ${name}-alt-{colour}-{uniqueId (1)}: hex value
+ * example: $name-alt-colour-1:#000;
+ */
+
+$global-font-colour: #000;
+
+$rps-white: #FFF;
+
+$rps-grey: #BDBDBD;
+
+$facebook-blue: #354f88; 
+$twitter-blue: #40a2d1;
+$google-red: #ce3e26;

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+    <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+    <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+    <!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+    <!--[if gt IE 8]><html class="no-js gt-ie8" lang="en"><![endif]-->
+    <!--[if !IE]> --><html class="no-js" lang="en"><!-- <![endif]-->
+
+    <head>
+
+        <title>Rock, Paper, Scissors</title>
+
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="public/assets/stylesheets/screen.css" media="screen" />
+
+        <script type="text/javascript" src="public/assets/scripts/script.min.js"></script>
+
+    </head> 
+    <body>
+
+        <div id="container">
+
+            <header class="main">
+                <h1>
+                    Rock, Paper, Scissors
+                </h1>
+            </header>
+
+            <div class="main-content">
+
+                <div class="option module">
+                    <p>To play please select one of the options below</p>
+                    <div class="components">
+                        <div class="component">
+                            <button type="button" class="play button button--type-1" data-choice="rock" title="Rock">Rock</button>
+                        </div>
+                        <div class="component">
+                            <button type="button" class="play button button--type-1" data-choice="paper" title="Paper">Paper</button>
+                        </div>
+                        <div class="component">
+                            <button type="button" class="play button button--type-1" data-choice="scissors" title="Scissors">Scissors</button>
+                        </div>
+                    </div>
+                    <button type="button" id="automate" class="button button--type-1" title="computer vs computer">computer vs computer</button>
+                </div>
+
+                <div class="result module">
+                    <p class="result--text"></p>
+                    <div class="components">
+                        <div class="component"></div>
+                        <div class="component"></div>
+                    </div>
+                    <button type="button" id="reset" class="button button--type-1" title="Restart game">Restart game</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

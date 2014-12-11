@@ -1,0 +1,146 @@
+/*
+ * Generic
+ */
+
+body{
+  -webkit-text-size-adjust:100%;
+  font-family:$base-font-family;
+  background-color:$rps-grey;
+}
+
+strong {
+  font-weight:bold;
+}
+
+small {
+  color:$global-font-colour;
+
+  @extend %font%webfont-fallback;
+  @extend %font%webfont-fallback%type-1;
+}
+
+p {
+  color:$global-font-colour;
+  margin-bottom:10px;
+
+  &:last-child {
+    margin-bottom:0;
+  }
+
+  @extend %font%webfont-fallback;
+  @extend %font%webfont-fallback%type-1;
+}
+
+img {
+  display: block;
+}
+
+a, button {
+  text-decoration:none;
+  cursor:pointer;
+  outline:none;
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+/* HELPERS */
+%clear_both {
+  display:table;
+  clear:both;
+  content:"";
+}
+
+/*
+ * MODULE
+ * Modules are the infrastructure of the grid
+ */
+
+.module {
+  display:none;
+
+  .components {
+    width:100%;
+
+    &:after {
+      @extend %clear_both;
+    }
+  }
+
+  &.option {
+    display:block;
+
+    .components {
+      border-bottom:1px solid $rps-grey;
+      padding-bottom:10px;
+      margin-bottom:10px;
+
+      .component {
+        margin-bottom:10px;
+        width:100%;
+
+        &:first-child + .component + .component {
+          margin-bottom:0;
+        }
+
+        @include breakpoint(($tablet-portrait + 1), '.lt-ie9') {
+          margin-bottom:0;
+
+          @include span(4 of 12);
+
+          &:first-child + .component + .component {
+
+            @include last;
+          }
+        }
+      }
+    }
+  }
+
+  &.result { 
+
+    .result--text {
+      font-weight:bold;
+    }
+
+    .components {
+
+      @include breakpoint(($tablet-portrait + 1), '.lt-ie9') {
+        margin-bottom:10px;
+      }
+
+      .component {
+        border:1px solid $rps-grey;
+        margin-bottom:10px;
+        text-align:center;
+        padding:10px;
+        width:100%;
+
+        @include border-radius(5px);
+
+        @include breakpoint(($tablet-portrait + 1), '.lt-ie9') {
+          margin-bottom:0;
+
+          @include span(6 of 12);
+
+          &:first-child + .component {
+
+            @include last;
+          }
+        }
+
+        .result--player {
+          font-weight:bold;
+        }
+
+        .result--choice {
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .result--winner-cta {
+
+  }
+}

@@ -1,0 +1,40 @@
+/*
+ * Layouts
+ */
+
+#container {
+  background-color:$rps-white;
+  margin-top:25px;
+  width:100%;
+
+  @include border-radius(5px);
+
+  @include breakpoint(($mobile-landscape + 1)) {
+
+    @include container(600px);
+  }
+
+  @include breakpoint($tablet-landscape, '.lt-ie9') {
+    margin-top:50px;
+  }
+
+  header.main {
+    border-bottom:1px solid $rps-grey;
+    text-align: center;
+    padding:20px 0;
+
+    h1 {
+      color:$global-font-colour;
+
+      @extend %font%webfont-fallback;
+      @extend %font%webfont-fallback%type-2;
+    }
+  }
+
+  .main-content {
+    text-align:center;
+    min-height:200px;
+    *height:200px;
+    padding:20px;
+  }
+}
