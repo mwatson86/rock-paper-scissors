@@ -50,7 +50,8 @@ module.exports = function(grunt) {
           },
           dist: {
             src: [
-                '<%= meta.dev.scriptsDir %>/vendor/*.js',
+                '<%= meta.dev.scriptsDir %>/vendor/jquery-1.9.1.js',
+                '<%= meta.dev.scriptsDir %>/vendor/modernizr.js',
                 '<%= meta.dev.scriptsDir %>/*.js'
             ],
             dest: '<%= meta.prod.scriptsDir %>/script.js'

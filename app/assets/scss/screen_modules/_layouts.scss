@@ -9,7 +9,7 @@
 
   @include border-radius(5px);
 
-  @include breakpoint(($mobile-landscape + 1)) {
+  @include breakpoint(($mobile-landscape + 1), '.lt-ie9') {
 
     @include container(600px);
   }
