@@ -9594,8 +9594,7 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 	define( "jquery", [], function () { return jQuery; } );
 }
 
-})( window );
-;/*!
+})( window );;/*!
  * Modernizr v2.8.3
  * www.modernizr.com
  *

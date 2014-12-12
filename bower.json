@@ -4,7 +4,7 @@
   "authors": [
     "Miles Watson <mileswatson86@gmail.com>"
   ],
-  "description": "ELLEUK bower file",
+  "description": "Rock Paper Scissors bower file",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
+    "jquery": "#1.9.1",
     "modernizr": "~2.8.2"
   }
 }

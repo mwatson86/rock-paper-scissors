@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 					destPrefix: '<%= meta.dev.scriptsDir %>/vendor'
 				},
 				files: {
-					'jquery.js': 'bower_components/jquery/dist/jquery.js',
+					'jquery.js': 'bower_components/jquery/jquery.js',
 					'modernizr.js': 'bower_components/modernizr/modernizr.js',
 				}
 	        }
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
           },
           dist: {
             src: [
-                '<%= meta.dev.scriptsDir %>/vendor/jquery-1.9.1.js',
+                '<%= meta.dev.scriptsDir %>/vendor/jquery.js',
                 '<%= meta.dev.scriptsDir %>/vendor/modernizr.js',
                 '<%= meta.dev.scriptsDir %>/*.js'
             ],
